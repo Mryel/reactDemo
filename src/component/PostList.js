@@ -33,6 +33,7 @@ class PostList extends Component {
         }
         this.timer = null
         this.handleVote = this.handleVote.bind(this)
+        this.handleSave = this.handleSave.bind(this)
     }
     componentDidMount () {
         this.timer = setTimeout(() => {
@@ -59,6 +60,16 @@ class PostList extends Component {
             posts
         })
     }
+    handleSave (post) {
+        console.log(this.state)
+        const posts = this.state.posts.map(item => {
+            const newItem = item.id === post.id ? post : item
+            return newItem
+        })
+        this.setState({
+            posts
+        })
+    }
     render () {
         return (
             <div>
@@ -69,6 +80,7 @@ class PostList extends Component {
                             key = {item.id}
                             post = {item}
                             onVote = {this.handleVote}
+                            onSave={this.handleSave}
                         />
                     )}
                 </ul>
