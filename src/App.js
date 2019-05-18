@@ -4,7 +4,7 @@ import React, {Component} from 'react';
 // import LoginForm from './component/LoginForm'
 // import Modal from './component/Modal'
 // import Hello from './component/Hello'
-import UserListContainer from './component/UserListContainer'
+import Login from './component/Login'
 import './App.css';
 
 // function App() {
@@ -45,7 +45,7 @@ class App extends Component {
       //     <Modal onClose={this.closeModal}>Modal Dialog</Modal>
       //   )}
       // </div>
-      <UserListContainer/>
+      <Login/>
     )
   }
 }
